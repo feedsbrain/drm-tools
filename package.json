@@ -1,0 +1,32 @@
+{
+  "name": "drm-key-tools",
+  "version": "0.0.1",
+  "description": "Tools for DRM KEY",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'OK'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feedsbrain/drm-key-tools.git"
+  },
+  "keywords": [
+    "drm",
+    "key",
+    "widevine",
+    "playready"
+  ],
+  "author": "Indra Gunawan <feedsbrain@gmail.com>",
+  "license": "ISC",
+  "bin": {
+    "keytools": "./index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/feedsbrain/drm-key-tools/issues"
+  },
+  "homepage": "https://github.com/feedsbrain/drm-key-tools#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^2.20.0"
+  }
+}
