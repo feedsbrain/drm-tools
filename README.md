@@ -1,2 +1,2 @@
-# drm-key-tools
+# drm-tools
 Tools for DRM KEY
