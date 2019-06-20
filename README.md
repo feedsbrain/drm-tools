@@ -1,2 +1,2 @@
 # drm-tools
-Tools for DRM KEY
+Tools for Widevine and PlayReady

@@ -1,7 +1,7 @@
 {
   "name": "drm-tools",
   "version": "0.0.1",
-  "description": "Tools for DRM KEY",
+  "description": "Tools for Widevine and PlayReady",
   "main": "index.js",
   "scripts": {
     "test": "echo 'OK'"
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "drm",
-    "key",
+    "tools",
     "widevine",
     "playready"
   ],
