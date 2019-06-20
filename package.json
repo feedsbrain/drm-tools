@@ -19,7 +19,7 @@
   "author": "Indra Gunawan <feedsbrain@gmail.com>",
   "license": "ISC",
   "bin": {
-    "keytools": "./index.js"
+    "drmkey": "./index.js"
   },
   "bugs": {
     "url": "https://github.com/feedsbrain/drm-key-tools/issues"
