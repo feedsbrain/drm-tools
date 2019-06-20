@@ -7,7 +7,7 @@ let command
 
 program
   .command('widevine')
-  .description('use -h for list of available options')
+  .description('widevine drm tools')
   .option('--content-id [id]', 'Content ID')
   .option('--url [url]', 'Target key server URL')
   .option('--provider [provider]', 'Provider (for Widevine)')
@@ -16,7 +16,7 @@ program
   .action(function(){
     command = 'widevine'
     if (!program.contentId) {
-      console.log('Content ID is Missing')
+      program.help()
       process.exit(1)
     }
     let params = {
@@ -34,13 +34,8 @@ program
   })
 
 program
-  .usage('<command> [options] (use -h or --help for list of available options)')
-  .version('0.1.0', '-v, --version')
-  .arguments('<cmd> [env]')
-  .action(function (cmd, env) {
-    cmdValue = cmd;
-    envValue = env;
-  })
+  .usage('<command> -h for help')
+  .version('0.0.1', '-v, --version')
   .parse(process.argv)
 
 if (!command) {
