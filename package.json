@@ -27,7 +27,8 @@
   "homepage": "https://github.com/feedsbrain/drm-tools#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "pssh-tools": "0.0.9"
   },
   "devDependencies": {
     "standard": "^12.0.1"
