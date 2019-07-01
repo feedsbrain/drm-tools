@@ -10,6 +10,7 @@ const register = (program) => {
     .option('--key [key]', 'Private Key')
     .option('--key-iv [kiv]', 'Private Key IV')
     .option('--track [value]', 'DRM Track Type', /^(SD|HD|AUDIO|ALL)$/i, 'ALL')
+    .option('--human', 'Print result in human readable format')
     .action(function (operation, options) {
       if (operation && operation.toLowerCase() === 'key') {
         if (!options.contentId || !options.url || !options.provider || !options.key || !options.keyIv) {
@@ -37,6 +38,16 @@ const register = (program) => {
         }
 
         widevine.getKeys(params).then((keys) => {
+          if (options.human) {
+            console.log('Formating for human ...')
+            let decodedTracks = []
+            for (let track of keys.tracks) {
+              track['key_id'] = Buffer.from(track['key_id'], 'base64').toString('hex')
+              track['key'] = Buffer.from(track['key'], 'base64').toString('hex')
+              decodedTracks.push(track)
+            }
+            keys.tracks = decodedTracks
+          }
           console.log(JSON.stringify(keys, null, 2))
         })
       }
