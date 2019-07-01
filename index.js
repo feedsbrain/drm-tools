@@ -1,43 +1,24 @@
 #!/usr/bin/env node
 
 const program = require('commander')
-const widevine = require('./lib/widevine')
+const widevine = require('./cli/widevine')
 
-let command
+// register widevine cli
+widevine.register(program)
 
-program
-  .command('widevine')
-  .description('widevine drm tools')
-  .option('--content-id [id]', 'Content ID')
-  .option('--url [url]', 'Target key server URL')
-  .option('--provider [provider]', 'Provider (for Widevine)')
-  .option('--key [key]', 'Private Key')
-  .option('--key-iv [kiv]', 'Private Key IV')
-  .action(function(){
-    command = 'widevine'
-    if (!program.contentId) {
-      program.help()
-      process.exit(1)
-    }
-    let params = {
-      contentId: program.contentId,
-      widevineUrl: program.url,
-      provider: program.provider,
-      privateKey: program.key,
-      privateKeyIV: program.keyIv
-    }
-  
-    console.log(params)
-    widevine.getKeys(params).then((keys) => {
-      console.log(keys)
-    })
-  })
+program.on('command:*', function () {
+  console.error('Invalid Command: %s\n', program.args.join(' '))
+  program.help()
+  process.exit(1)
+})
 
 program
+  .description('Widevine DRM Command Line Tools')
   .usage('<command> -h for help')
   .version('0.0.1', '-v, --version')
   .parse(process.argv)
 
-if (!command) {
+// show help if no argument passes
+if (process.argv.length < 3) {
   program.help()
 }
