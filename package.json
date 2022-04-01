@@ -1,6 +1,6 @@
 {
   "name": "drm-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tools for Widevine and PlayReady",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/feedsbrain/drm-tools#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.26.1",
     "commander": "^2.20.0"
   },
   "devDependencies": {
