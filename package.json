@@ -1,10 +1,11 @@
 {
   "name": "drm-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tools for Widevine and PlayReady",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'OK'"
+    "test": "echo 'OK'",
+    "pub": "npm version patch --force && npm publish"
   },
   "repository": {
     "type": "git",
