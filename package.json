@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/feedsbrain/drm-tools#readme",
   "dependencies": {
-    "axios": "^1.7.7",
+    "axios": "^1.8.2",
     "commander": "^2.20.0"
   },
   "devDependencies": {
