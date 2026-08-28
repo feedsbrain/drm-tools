@@ -1,10 +1,18 @@
 {
   "name": "drm-tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tools for Widevine and PlayReady",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo 'OK'",
+    "clean": "rm -rf dist coverage",
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run clean && npm run build",
     "pub": "npm version patch --force && npm publish"
   },
   "repository": {
@@ -20,17 +28,26 @@
   "author": "Indra Gunawan <feedsbrain@gmail.com>",
   "license": "ISC",
   "bin": {
-    "drmtools": "./index.js"
+    "drmtools": "dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/feedsbrain/drm-tools/issues"
   },
   "homepage": "https://github.com/feedsbrain/drm-tools#readme",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "dependencies": {
-    "axios": "^1.7.7",
-    "commander": "^2.20.0"
+    "axios": "^1.20.0",
+    "commander": "^15.0.0"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "^4.1.11",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
   }
 }
