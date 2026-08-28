@@ -1,6 +1,6 @@
 {
-  "name": "@feedsbrain/drm-tools",
-  "version": "0.0.5",
+  "name": "drm-tools",
+  "version": "0.0.4",
   "description": "Tools for Widevine and PlayReady",
   "type": "module",
   "main": "dist/index.js",
