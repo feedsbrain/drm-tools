@@ -29,6 +29,29 @@ Options:
   -h, --help             display help for command
 ```
 
+### PlayReady
+
+```bash
+$ drmtools playready
+Usage: drmtools playready [operation] [options]
+
+Operations:
+ - convert : Convert a hex key id to its base64 (endian-swapped) form
+ - revert  : Convert a base64 (endian-swapped) key id back to hex
+
+Options:
+  --key <value>  Key ID to convert or revert
+  -h, --help     display help for command
+```
+
+```bash
+$ drmtools playready convert --key 10000000000000000000000000000000
+AAAAEAAAAAAAAAAAAAAAAA==
+
+$ drmtools playready revert --key AAAAEAAAAAAAAAAAAAAAAA==
+10000000000000000000000000000000
+```
+
 ## Development
 
 This project is written in TypeScript (ESM). Sources live in `src/`, unit tests

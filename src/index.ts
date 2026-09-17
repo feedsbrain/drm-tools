@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs'
 import { Command } from 'commander'
 
 import { register as registerWidevine } from './cli/widevine.js'
+import { register as registerPlayReady } from './cli/playready.js'
 
 const { version } = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8')
@@ -21,6 +22,9 @@ program
 
 // register widevine cli
 registerWidevine(program)
+
+// register playready cli
+registerPlayReady(program)
 
 program.parse(process.argv)
 
